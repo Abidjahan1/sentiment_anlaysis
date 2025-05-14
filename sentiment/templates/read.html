@@ -1,0 +1,11 @@
+<h2>All Sentiments</h2>
+<a href="{% url 'create_sentiment' %}">Add New</a>
+<ul>
+  {% for s in sentiments %}
+    <li>
+      {{ s.text }} — <strong>{{ s.predicted_sentiment }}</strong>
+      [<a href="{% url 'update_sentiment' s.pk %}">Edit</a>]
+      [<a href="{% url 'delete_sentiment' s.pk %}">Delete</a>]
+    </li>
+  {% endfor %}
+</ul>
