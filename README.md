@@ -27,22 +27,28 @@ This is a web-based **Sentiment Analysis** application built with **Django** tha
 ## 📁 Project Structure
 
 sentiment/
-├── sentiment/ # Main Django project settings
-├── model
-│ ├── model.pkl
-│ ├── tfidf.pkl
-├── sentiment_app/ # Core Django app
-│ ├── views.py # Predict API, Form handler, List view
-│ ├── models.py # SentimentRecord model
-│ ├── urls.py # App-level routes
-│ └── templates/
-│ └── form.html # HTML form to submit text
-│ └── create.html # add new record
-│ └── update.html # update the record
-│ └── read.html # read all records
 ├── manage.py
 ├── requirements.txt
-└── README.md
+├── README.md
+├── model/
+│   ├── model.pkl          # Trained Logistic Regression model
+│   └── tfidf.pkl          # TF-IDF Vectorizer
+├── sentiment/
+│   ├── __init__.py
+│   ├── settings.py        # Django project settings
+│   ├── urls.py            # Main project-level routes
+│   └── wsgi.py
+├── sentiment_app/
+│   ├── __init__.py
+│   ├── models.py          # Django model: SentimentRecord
+│   ├── views.py           # All view functions (API + Web)
+│   ├── urls.py            # App-level route definitions
+│   └── templates/
+│       ├── form.html      # Sentiment prediction form
+│       ├── create.html    # Create new sentiment record
+│       ├── read.html      # Read and display all records
+│       └── update.html    # Update existing record
+
 
 
 🌐 API Endpoints
